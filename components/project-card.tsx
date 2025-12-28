@@ -1,20 +1,29 @@
-import { ExternalLink, FileText } from "lucide-react"
-import Link from "next/link"
+import { ExternalLink, FileText } from "lucide-react";
+import Link from "next/link";
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  tags: string[]
-  codeUrl?: string
-  reportUrl?: string
+  title: string;
+  description: string;
+  tags: string[];
+  codeUrl?: string;
+  paper?: string | null;
 }
 
-export function ProjectCard({ title, description, tags, codeUrl, reportUrl }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  description,
+  tags,
+  codeUrl,
+  paper,
+}: ProjectCardProps) {
   return (
     <div className="group p-6 rounded-2xl border border-border bg-card hover:border-muted-foreground/30 transition-all duration-300">
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag) => (
-          <span key={tag} className="text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
+          <span
+            key={tag}
+            className="text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full"
+          >
             {tag}
           </span>
         ))}
@@ -24,7 +33,9 @@ export function ProjectCard({ title, description, tags, codeUrl, reportUrl }: Pr
         {title}
       </h4>
 
-      <p className="text-sm text-muted-foreground leading-relaxed mb-6">{description}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+        {description}
+      </p>
 
       <div className="flex items-center gap-4">
         {codeUrl && (
@@ -37,17 +48,17 @@ export function ProjectCard({ title, description, tags, codeUrl, reportUrl }: Pr
             Code
           </Link>
         )}
-        {reportUrl && (
+        {paper && (
           <Link
-            href={reportUrl}
+            href={paper}
             target="_blank"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <FileText size={16} />
-            Report
+            Paper
           </Link>
         )}
       </div>
     </div>
-  )
+  );
 }
