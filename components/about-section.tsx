@@ -23,7 +23,7 @@ export function AboutSection() {
             Recognition, NLP, and Signal Processing. Each project is an opportunity to push my understanding further.
           </p>
           <p>
-            Outside of code, you'll find me exploring new music, gaming with friends, or hunting for the next
+            Outside of code, you'll find me exploring new music, playing football, or hunting for the next
             interesting hackathon to join. I believe the best ideas often come from unexpected places.
           </p>
         </div>
