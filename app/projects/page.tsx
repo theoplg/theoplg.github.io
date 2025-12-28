@@ -34,7 +34,17 @@ const allProjects = [
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
   },
-  
+  {
+    title: "Typescript display",  
+    description:
+    "A comprehensive TypeScript learning project showcasing various practical works (TPs) and a final project. This repository serves as a portfolio of TypeScript skills, featuring interactive web applications and demonstrations.",
+    tags: ["TypeScript", "Web Development"],
+    date: "January 2025",
+    image: "/typescript.webp",
+    codeUrl: "https://github.com/theoplg/typescript-display",
+    paper: null,
+  }
+
 ]
 
 export default function ProjectsPage() {
