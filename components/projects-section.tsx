@@ -9,6 +9,7 @@ const notableProjects = [
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
     tags: ["Python", "BERTopic", "Streamlit", "NLP", "Clustering"],
     codeUrl: "https://github.com/theoplg/llm-ssc",
+    paper: null,
   },
   {
     title: "Copy-Move Forgery Detection",
@@ -16,7 +17,7 @@ const notableProjects = [
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Python", "Computer Vision", "PatchMatch", "Image Processing"],
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    reportUrl: "https://theoplg.github.io/portfolio-website/reports/papier1.pdf",
+    paper: "/reports/papier1.pdf",
   },
   {
     title: "spinning-ball-spiral",
@@ -24,7 +25,7 @@ const notableProjects = [
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
     tags: ["Python", "Matplotlib", "Physics Simulation"],
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    reportUrl: "https://theoplg.github.io/portfolio-website/reports/papier2.pdf",
+    paper: "/reports/papier2.pdf",
   },
 ]
 

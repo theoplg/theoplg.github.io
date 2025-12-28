@@ -24,7 +24,7 @@ export function HeroSection() {
             View Projects
           </Link>
           <Link
-            href="https://theoplg.github.io/portfolio-website/resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             className="px-6 py-3 border border-border rounded-lg text-sm font-medium text-foreground hover:bg-muted transition-colors"
           >

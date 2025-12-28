@@ -12,6 +12,7 @@ const allProjects = [
     date: "Dec 2024",
     image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
     codeUrl: "https://github.com/theoplg/llm-ssc",
+    paper: null,
   },
   {
     title: "Copy-Move Forgery Detection",
@@ -21,7 +22,7 @@ const allProjects = [
     date: "Nov 2024",
     image: "/image-forgery-detection-algorithm-visualization.jpg",
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    reportUrl: "https://theoplg.github.io/portfolio-website/reports/papier1.pdf",
+    paper: "/reports/papier1.pdf",
   },
   {
     title: "spinning-ball-spiral",
@@ -31,40 +32,9 @@ const allProjects = [
     date: "Oct 2024",
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    reportUrl: "https://theoplg.github.io/portfolio-website/reports/papier2.pdf",
+    paper: "/reports/papier2.pdf",
   },
-  {
-    title: "Contractive and Robust Imitation",
-    description:
-      "Learning unconstrained and stable imitation policies from state-only expert demonstrations applicable to a variety of robotic platforms. Experiments and simulations are entirely conducted in simulation environments.",
-    tags: ["Imitation Learning", "PyTorch", "Isaac Sim/Lab"],
-    date: "Apr 28, 2024",
-    image: "/robotic-arm-imitation-learning-simulation.jpg",
-    ongoing: true,
-  },
-  {
-    title: "Safe RL Policy Optimization",
-    description:
-      "Learning model-free reinforcement learning policies with internal safety and stability guarantees mainly for manipulation and locomotion tasks. The experiments leverage domain randomization techniques.",
-    tags: ["Reinforcement Learning", "PyTorch", "Isaac Sim/Lab"],
-    date: "Feb 24, 2024",
-    image: "/reinforcement-learning-robot-locomotion.jpg",
-    ongoing: true,
-  },
-  {
-    title: "Lyapunov-Stable Polynomial Imitation Policies",
-    description: "Learning polynomial imitation policies with guaranteed stability and out of distribution recovery.",
-    tags: ["Imitation Learning", "Python", "C/C++"],
-    date: "Apr 28, 2024",
-    image: "/robotic-arm-drawing-mathematical-curves.jpg",
-  },
-  {
-    title: "Stable Neural Imitation Policies",
-    description: "Learning globally stable neural imitation policies (SNDS).",
-    tags: ["Imitation Learning", "PyTorch"],
-    date: "Oct 26, 2023",
-    image: "/robot-arm-neural-network-imitation-learning-poses.jpg",
-  },
+  
 ]
 
 export default function ProjectsPage() {
