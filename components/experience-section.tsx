@@ -71,7 +71,7 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        <div className="flex items-center justify-between mt-8">
+        <div className="flex items-center justify-center gap-6 mt-8">
           <Button
             variant="outline"
             size="icon"
