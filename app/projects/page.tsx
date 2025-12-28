@@ -5,47 +5,46 @@ import { ArrowLeft } from "lucide-react"
 
 const allProjects = [
   {
+    title: "Copy-Move Forgery Detection",
+    description:
+      "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
+    tags: ["Computer Vision", "Python", "Image Processing"],
+    date: "Sep 2025",
+    image: "/image-forgery-detection-algorithm-visualization.jpg",
+    codeUrl: "https://github.com/theoplg/copy-moove-forgery",
+    paper: "/reports/papier1.pdf",
+  },
+  {
     title: "LLM-SSC",
     description:
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
     tags: ["NLP", "Python", "BERTopic"],
-    date: "Dec 2024",
+    date: "May 2025",
     image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
     codeUrl: "https://github.com/theoplg/llm-ssc",
     paper: null,
   },
   {
-    title: "Copy-Move Forgery Detection",
+    title: "Typescript display",
     description:
-      "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
-    tags: ["Computer Vision", "Python", "Image Processing"],
-    date: "Nov 2024",
-    image: "/image-forgery-detection-algorithm-visualization.jpg",
-    codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    paper: "/reports/papier1.pdf",
+      "A comprehensive TypeScript learning project showcasing various practical works (TPs) and a final project. This repository serves as a portfolio of TypeScript skills, featuring interactive web applications and demonstrations.",
+    tags: ["TypeScript", "Web Development"],
+    date: "Jan 2025",
+    image: "/typescript.webp",
+    codeUrl: "https://github.com/theoplg/typescript-display",
+    paper: null,
   },
   {
     title: "spinning-ball-spiral",
     description:
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
     tags: ["Physics Simulation", "Python", "Matplotlib"],
-    date: "Oct 2024",
+    date: "2023 - 2024",
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
-  },
-  {
-    title: "Typescript display",  
-    description:
-    "A comprehensive TypeScript learning project showcasing various practical works (TPs) and a final project. This repository serves as a portfolio of TypeScript skills, featuring interactive web applications and demonstrations.",
-    tags: ["TypeScript", "Web Development"],
-    date: "January 2025",
-    image: "/typescript.webp",
-    codeUrl: "https://github.com/theoplg/typescript-display",
-    paper: null,
   }
-
-]
+];
 
 export default function ProjectsPage() {
   return (
