@@ -39,7 +39,7 @@ const timeline = [
   },
 ];
 
-export function Experience() {
+export function ExperienceSection() {
   const [index, setIndex] = useState(0);
 
   const next = () => setIndex((prev) => (prev + 1) % timeline.length);
