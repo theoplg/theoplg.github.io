@@ -31,7 +31,7 @@ export function HeroSection() {
               Theo Palagi
             </h1>
             <p className="text-lg text-muted-foreground mb-4">
-              Student @Telecom Paris, Institut Polytechnique de Paris
+              Student <span className="font-bold">@Telecom Paris</span>, Institut Polytechnique de Paris
             </p>
             <p className="text-base text-muted-foreground max-w-2xl mb-8 leading-relaxed">
               Hello! I'm Theo, an Engineering Student from France, passionate
