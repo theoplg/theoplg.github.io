@@ -27,7 +27,7 @@ export const allProjects: Project[] = [
     description:
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
     tags: ["NLP", "Python", "BERTopic"],
-    date: "Dec 2024",
+    date: "May 2025",
     image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
     codeUrl: "https://github.com/theoplg/llm-ssc",
     abstract:
@@ -90,7 +90,7 @@ export const allProjects: Project[] = [
     description:
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
     tags: ["Physics Simulation", "Python", "Matplotlib"],
-    date: "Oct 2024",
+    date: "2023 - 2024",
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
