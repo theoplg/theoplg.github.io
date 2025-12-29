@@ -16,6 +16,7 @@ export interface Project {
     title: string;
     content: string;
     image?: string;
+    images?: string[];
   }[];
 }
 
@@ -56,19 +57,30 @@ export const allProjects: Project[] = [
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
     paper: "https://theoplg.github.io/portfolio-website/reports/papier1.pdf",
     abstract:
-      "Copy-move forgery is one of the most common types of image manipulation, where a region of an image is copied and pasted elsewhere in the same image to hide or duplicate objects. This project implements a robust detection pipeline based on the PatchMatch algorithm, which efficiently finds approximate nearest neighbor matches between image patches. The system incorporates median filtering for noise reduction, generates error maps to highlight suspicious regions, and uses RMSE (Root Mean Square Error) verification to validate detected forgeries with high precision.",
+      "Digital image manipulation has become increasingly common, with copy-move forgery being one of the most prevalent techniques where a region is copied and pasted elsewhere in the same image to hide or duplicate objects. This project implements an automatic detection system based on the PatchMatch algorithm, originally designed for structural image editing. By adapting this dense correspondence algorithm with spatial constraints and post-processing techniques, we created a robust pipeline capable of detecting copy-move forgeries while maintaining resilience against common image alterations such as blur, noise, and JPEG compression.",
     type: "Academic Project",
-    publication: "Course Project - Computer Vision, Fall 2024",
+    publication: "Course Project - Computer Vision (IM01), November 2025",
     sections: [
       {
-        title: "Methodology",
+        title: "The PatchMatch Algorithm",
         content:
-          "The detection pipeline consists of several stages: First, the input image is converted to grayscale and divided into overlapping patches. The PatchMatch algorithm then iteratively refines nearest neighbor field estimates to find similar patches efficiently. Median filtering is applied to reduce false positives caused by noise. An error map is computed by measuring the difference between matched patches, and regions with low error are flagged as potential forgeries. Finally, RMSE thresholding validates the detected regions.",
+          "PatchMatch efficiently computes a Nearest-Neighbor Field (NNF) by exploiting local image coherence. The algorithm operates through three key phases: (1) Random initialization assigns random correspondences between patches; (2) Propagation exploits spatial coherence by testing if neighboring offsets improve the current match, using both forward and backward passes; (3) Random search escapes local minima by testing candidates in exponentially decreasing concentric neighborhoods. For copy-move detection, we introduced a 'forbidden zone' constraint that prevents patches from matching to themselves, forcing the algorithm to find duplicated regions elsewhere in the image.",
+        image: "/copy-move/patchmatch-phases.png",
       },
       {
-        title: "Experimental Results",
+        title: "Detection Pipeline",
         content:
-          "The algorithm was tested on standard forgery detection benchmarks and achieved high detection accuracy while maintaining computational efficiency. The PatchMatch-based approach significantly outperforms brute-force methods in terms of speed, making it practical for real-world forensic applications.",
+          "The raw displacement field from PatchMatch requires extensive post-processing to produce reliable binary detection masks. Our pipeline includes: (1) Median filtering on displacement components to remove isolated outliers while preserving boundaries; (2) Error map computation measuring local variance of displacement vectors—copied regions exhibit near-zero variance while natural homogeneous areas show high variance; (3) Global frequency filtering to keep only displacement vectors shared by many pixels (typically >1000); (4) RMSE verification between matched patches to eliminate false positives; (5) Morphological operations including size filtering and dilation to produce clean detection masks.",
+      },
+      {
+        title: "Results & Robustness",
+        content:
+          "The system successfully detects copy-move forgeries in various scenarios, performing particularly well on simple translations with textured objects. The algorithm demonstrates remarkable robustness: (1) Blur resistance—PatchMatch compares neighborhoods rather than individual pixels, so low-frequency structures remain detectable; (2) Noise tolerance—median filtering effectively handles impulse noise, and the method remains functional with Gaussian noise and JPEG compression artifacts; (3) Parameter sensitivity—the forbidden zone radius must be carefully tuned based on image characteristics (larger for homogeneous areas, smaller for detailed images). Key limitations include difficulty with uniform regions (sky, grass) that exhibit natural self-similarity, inability to handle rotation/scaling without invariant descriptors, and challenges with inpainting where copied patches originate from multiple dispersed locations.",
+        images: [
+          "/copy-move/results-comparison.png",
+          "/copy-move/robustness-examples.png",
+          "/copy-move/inpainting-examples.png",
+        ],
       },
     ],
   },

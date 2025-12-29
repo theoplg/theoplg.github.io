@@ -128,6 +128,23 @@ export default async function ProjectPage({
                     />
                   </div>
                 )}
+                {section.images && section.images.length > 0 && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    {section.images.map((img, imgIndex) => (
+                      <div
+                        key={imgIndex}
+                        className="relative aspect-video rounded-xl overflow-hidden bg-muted"
+                      >
+                        <Image
+                          src={img || "/placeholder.svg"}
+                          alt={`${section.title} - ${imgIndex + 1}`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
 
