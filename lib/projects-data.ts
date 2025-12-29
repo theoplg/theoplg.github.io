@@ -52,10 +52,10 @@ export const allProjects: Project[] = [
     description:
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Computer Vision", "Python", "Image Processing"],
-    date: "Nov 2024",
+    date: "Sep 2025",
     image: "/image-forgery-detection-algorithm-visualization.jpg",
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    paper: "https://theoplg.github.io/portfolio-website/reports/papier1.pdf",
+    paper: "/reports/papier1.pdf",
     abstract:
       "Digital image manipulation has become increasingly common, with copy-move forgery being one of the most prevalent techniques where a region is copied and pasted elsewhere in the same image to hide or duplicate objects. This project implements an automatic detection system based on the PatchMatch algorithm, originally designed for structural image editing. By adapting this dense correspondence algorithm with spatial constraints and post-processing techniques, we created a robust pipeline capable of detecting copy-move forgeries while maintaining resilience against common image alterations such as blur, noise, and JPEG compression.",
     type: "Academic Project",
@@ -93,7 +93,7 @@ export const allProjects: Project[] = [
     date: "Oct 2024",
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    paper: "https://theoplg.github.io/portfolio-website/reports/papier2.pdf",
+    paper: "/reports/papier2.pdf",
     abstract:
       "This project presents a comprehensive physics simulation investigating the aerodynamics of spinning spherical projectiles, with particular focus on the Magnus effect. Inspired by Roberto Carlos's legendary free-kick goal in 1997, where the ball curved dramatically in flight, we develop a mathematical model that captures the complex interplay between drag forces, lift forces, and the Magnus effect. The simulation allows for exploration of how spin rate, initial velocity, and environmental conditions affect the trajectory of a spinning ball.",
     type: "Academic Project",
@@ -112,102 +112,28 @@ export const allProjects: Project[] = [
     ],
   },
   {
-    slug: "contractive-robust-imitation",
-    title: "Contractive and Robust Imitation",
+    slug: "typescript-display",
+    title: "Typescript display",
     description:
-      "Learning unconstrained and stable imitation policies from state-only expert demonstrations applicable to a variety of robotic platforms. Experiments and simulations are entirely conducted in simulation environments.",
-    tags: ["Imitation Learning", "PyTorch", "Isaac Sim/Lab"],
-    date: "Apr 28, 2024",
-    image: "/robotic-arm-imitation-learning-simulation.jpg",
-    ongoing: true,
+      "A comprehensive TypeScript learning project showcasing various practical works (TPs) and a final project. This repository serves as a portfolio of TypeScript skills, featuring interactive web applications and demonstrations.",
+    tags: ["TypeScript", "Web Development"],
+    date: "Jan 2025",
+    image: "/typescript.webp",
+    codeUrl: "https://github.com/theoplg/typescript-display",
     abstract:
-      "Imitation learning is a data-driven approach to learning policies from expert behavior, but it is prone to unreliable outcomes in out-of-sample (OOS) regions. While previous research relying on stable dynamical systems guarantees convergence to a desired state, it often overlooks transient behavior. We propose a framework for learning policies modeled by contractive dynamical systems, ensuring that all policy rollouts converge regardless of perturbations, and in turn, enable efficient OOS recovery. By leveraging recurrent equilibrium networks and coupling layers, the policy structure guarantees contractivity for any parameter choice, which facilitates unconstrained optimization. We also provide theoretical upper bounds for worst-case and expected loss to rigorously establish the reliability of our method in deployment. Empirically, we demonstrate substantial OOS performance improvements for simulated robotic manipulation and navigation tasks.",
-    type: "Research Project",
-    publication:
-      "Submitted to International Conference on Learning Representations (ICLR 2025)",
+      "This project is a comprehensive TypeScript learning repository that compiles various practical works (TPs) and a final project undertaken during a TypeScript course. The repository serves as a portfolio of TypeScript skills, showcasing interactive web applications, demonstrations of TypeScript features, and best practices in modern web development. Each TP focuses on different aspects of TypeScript, including type safety, interfaces, classes, generics, and integration with popular frameworks.",
+    type: "Academic Project",
+    publication: "Course Project - TypeScript Development, January 2025",
     sections: [
       {
-        title: "Design Overview",
+        title: "Practical Works Overview",
         content:
-          "The architecture consists of three main components: a Contractive Recurrent Equilibrium Network (REN) that processes sequential state information, a linear projection layer that maps the hidden state to action space, and a bijection block that boosts the policy's expressive power while preserving contraction properties. The contractive property ensures that any two trajectories starting from different initial conditions will exponentially converge to each other.",
+          "The repository includes multiple TPs that progressively build TypeScript proficiency. Early TPs cover fundamental concepts such as types, interfaces, and functions, while later TPs delve into advanced topics like generics, decorators, and asynchronous programming. Each TP includes well-documented code examples and explanations to illustrate key concepts.",
       },
       {
-        title: "Summary of Results",
+        title: "Final Project",
         content:
-          "After training on expert demonstrations, the policy can be deployed with a low-level controller. The contractivity and, in turn, global stability of the policy facilitates reliable recovery from out-of-sample states. Experiments on robotic manipulation tasks (reaching, pushing) and locomotion tasks (walking, running) show significant improvements over baseline imitation learning methods, especially when the robot encounters states not seen during training.",
-      },
-    ],
-  },
-  {
-    slug: "safe-rl-policy-optimization",
-    title: "Safe RL Policy Optimization",
-    description:
-      "Learning model-free reinforcement learning policies with internal safety and stability guarantees mainly for manipulation and locomotion tasks. The experiments leverage domain randomization techniques.",
-    tags: ["Reinforcement Learning", "PyTorch", "Isaac Sim/Lab"],
-    date: "Feb 24, 2024",
-    image: "/reinforcement-learning-robot-locomotion.jpg",
-    ongoing: true,
-    abstract:
-      "This research project focuses on developing model-free reinforcement learning algorithms that incorporate internal safety and stability guarantees directly into the policy architecture. Traditional RL methods often produce policies that can exhibit unsafe or unstable behaviors, especially during deployment in real-world scenarios. Our approach embeds Lyapunov stability constraints and safety barrier functions into the neural network policy structure, ensuring that the learned behaviors remain within safe operating regions while still achieving high task performance. Domain randomization is extensively used to improve sim-to-real transfer.",
-    type: "Research Project",
-    publication: "Ongoing Research",
-    sections: [
-      {
-        title: "Safety Constraints Integration",
-        content:
-          "We integrate Control Barrier Functions (CBFs) and Control Lyapunov Functions (CLFs) directly into the policy optimization process. The policy network outputs are filtered through a safety layer that projects actions onto the safe set defined by CBF constraints. This ensures that safety is maintained at every timestep, regardless of the RL exploration strategy.",
-      },
-      {
-        title: "Experimental Setup",
-        content:
-          "Experiments are conducted in NVIDIA Isaac Sim/Lab environments, featuring high-fidelity physics simulation for robotic manipulation (Franka Panda arm) and locomotion (quadruped robots). Domain randomization is applied to physical parameters (mass, friction, damping) and visual properties to bridge the sim-to-real gap. Results show that our safe RL approach achieves comparable task performance to unconstrained RL while significantly reducing safety violations.",
-      },
-    ],
-  },
-  {
-    slug: "lyapunov-stable-polynomial",
-    title: "Lyapunov-Stable Polynomial Imitation Policies",
-    description:
-      "Learning polynomial imitation policies with guaranteed stability and out of distribution recovery.",
-    tags: ["Imitation Learning", "Python", "C/C++"],
-    date: "Apr 28, 2024",
-    image: "/robotic-arm-drawing-mathematical-curves.jpg",
-    abstract:
-      "This project explores the use of polynomial dynamical systems for imitation learning, with a focus on ensuring Lyapunov stability. Unlike neural network policies that can be difficult to analyze theoretically, polynomial policies allow for explicit computation of Lyapunov functions that certify stability. We develop methods to learn polynomial coefficients from expert demonstrations while simultaneously constructing a valid Lyapunov function, guaranteeing that the learned policy will converge to the target state from any initial condition within a verified region of attraction.",
-    type: "Research Project",
-    sections: [
-      {
-        title: "Polynomial Policy Representation",
-        content:
-          "Policies are represented as polynomial vector fields of configurable degree. The coefficients are learned via regression on expert state-action pairs, with additional constraints ensuring that a sum-of-squares (SOS) Lyapunov function exists. The SOS programming problems are solved using MOSEK through the SOSTOOLS interface, implemented in a combination of Python for data processing and C/C++ for efficient SOS solving.",
-      },
-      {
-        title: "Stability Guarantees",
-        content:
-          "The main advantage of this approach is the ability to provide formal stability certificates. Given the learned polynomial policy and the corresponding Lyapunov function, we can compute the region of attraction where convergence to the goal is guaranteed. This is particularly valuable for safety-critical robotics applications where theoretical guarantees are required.",
-      },
-    ],
-  },
-  {
-    slug: "stable-neural-imitation",
-    title: "Stable Neural Imitation Policies",
-    description: "Learning globally stable neural imitation policies (SNDS).",
-    tags: ["Imitation Learning", "PyTorch"],
-    date: "Oct 26, 2023",
-    image: "/robot-arm-neural-network-imitation-learning-poses.jpg",
-    abstract:
-      "Stable Neural Dynamical Systems (SNDS) is a framework for learning neural network policies that are guaranteed to be globally asymptotically stable. The key insight is to parameterize the policy as the negative gradient of a learned Lyapunov function, ensuring that the system always moves toward decreasing Lyapunov values and thus converges to the equilibrium. This project implements SNDS for robotic manipulation tasks, demonstrating that neural network expressiveness can be combined with strong stability guarantees.",
-    type: "Course Project",
-    sections: [
-      {
-        title: "SNDS Architecture",
-        content:
-          "The SNDS architecture consists of two components: a Lyapunov network V(x) that outputs a positive scalar for any state x (achieved using input convex neural networks), and a damping matrix D(x) that modulates the descent direction. The policy is computed as f(x) = -D(x)∇V(x), which by construction decreases V along trajectories, ensuring global convergence to the minimum of V.",
-      },
-      {
-        title: "Implementation Results",
-        content:
-          "The implementation uses PyTorch for neural network training with custom gradient computations for the Lyapunov gradient. Experiments on 2D reaching tasks and 7-DOF robotic arm control show that SNDS successfully learns from demonstrations while maintaining stability, even when starting from states far outside the training distribution.",
+          "The final project is a web application developed using TypeScript and React. It features a user-friendly interface, state management with Redux, and integration with RESTful APIs. The application demonstrates the practical application of TypeScript in building scalable and maintainable web applications, highlighting the benefits of static typing and modern development practices.",
       },
     ],
   },
