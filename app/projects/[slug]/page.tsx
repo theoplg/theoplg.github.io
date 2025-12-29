@@ -1,20 +1,24 @@
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, ExternalLink, FileText } from "lucide-react"
-import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects-data"
-import { Footer } from "@/components/footer"
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
+import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects-data";
+import { Footer } from "@/components/footer";
 
 export function generateStaticParams() {
-  return getAllProjectSlugs().map((slug) => ({ slug }))
+  return getAllProjectSlugs().map((slug) => ({ slug }));
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const project = getProjectBySlug(slug)
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -51,7 +55,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
               {/* Title */}
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {project.ongoing && <span className="text-muted-foreground">[Ongoing] </span>}
+                {project.ongoing && (
+                  <span className="text-muted-foreground">[Ongoing] </span>
+                )}
                 {project.title}
               </h1>
 
@@ -61,34 +67,57 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Hero Image */}
             <div className="relative aspect-video rounded-xl overflow-hidden bg-muted mb-10">
-              <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+              <Image
+                src={project.image || "/placeholder.svg"}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Abstract Section */}
             <section id="abstract" className="mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Abstract</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.abstract}</p>
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Abstract
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.abstract}
+              </p>
             </section>
 
             {/* Meta Info */}
             <div className="border-t border-border pt-6 mb-10 space-y-4">
               <div className="flex flex-col sm:flex-row sm:gap-8">
-                <span className="font-semibold text-foreground min-w-[120px]">Type</span>
+                <span className="font-semibold text-foreground min-w-[120px]">
+                  Type
+                </span>
                 <span className="text-muted-foreground">{project.type}</span>
               </div>
               {project.publication && (
                 <div className="flex flex-col sm:flex-row sm:gap-8">
-                  <span className="font-semibold text-foreground min-w-[120px]">Publication</span>
-                  <span className="text-muted-foreground">{project.publication}</span>
+                  <span className="font-semibold text-foreground min-w-[120px]">
+                    Publication
+                  </span>
+                  <span className="text-muted-foreground">
+                    {project.publication}
+                  </span>
                 </div>
               )}
             </div>
 
             {/* Additional Sections */}
             {project.sections?.map((section, index) => (
-              <section key={index} id={section.title.toLowerCase().replace(/\s+/g, "-")} className="mb-10">
-                <h2 className="text-2xl font-bold text-foreground mb-4">{section.title}</h2>
-                <p className="text-muted-foreground leading-relaxed">{section.content}</p>
+              <section
+                key={index}
+                id={section.title.toLowerCase().replace(/\s+/g, "-")}
+                className="mb-10"
+              >
+                <h2 className="text-2xl font-bold text-foreground mb-4">
+                  {section.title}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {section.content}
+                </p>
                 {section.image && (
                   <div className="relative aspect-video rounded-xl overflow-hidden bg-muted mt-6">
                     <Image
@@ -103,7 +132,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             ))}
 
             {/* Links */}
-            {(project.codeUrl || project.reportUrl) && (
+            {(project.codeUrl || project.paper) && (
               <div className="flex flex-wrap gap-4 pt-6 border-t border-border">
                 {project.codeUrl && (
                   <Link
@@ -115,9 +144,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     View Code
                   </Link>
                 )}
-                {project.reportUrl && (
+                {project.paper && (
                   <Link
-                    href={project.reportUrl}
+                    href={project.paper}
                     target="_blank"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-muted transition-colors font-medium"
                   >
@@ -132,7 +161,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {/* Sidebar - On this page */}
           <aside className="hidden lg:block w-64 shrink-0">
             <div className="sticky top-28">
-              <h3 className="text-sm font-semibold text-foreground mb-4">On this page</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-4">
+                On this page
+              </h3>
               <nav className="space-y-2">
                 <a
                   href="#abstract"
@@ -143,7 +174,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {project.sections?.map((section, index) => (
                   <a
                     key={index}
-                    href={`#${section.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`#${section.title
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                     className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {section.title}
@@ -158,5 +191,5 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <Footer />
       </div>
     </main>
-  )
+  );
 }
