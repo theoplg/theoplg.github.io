@@ -1,10 +1,11 @@
-import { AllProjectsCard } from "@/components/all-projects-card"
-import { Footer } from "@/components/footer"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { AllProjectsCard } from "@/components/all-projects-card";
+import { Footer } from "@/components/footer";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 const allProjects = [
   {
+    slug: "copy-move-forgery-detection",
     title: "Copy-Move Forgery Detection",
     description:
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
@@ -15,6 +16,7 @@ const allProjects = [
     paper: "/reports/papier1.pdf",
   },
   {
+    slug: "llm-ssc",
     title: "LLM-SSC",
     description:
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
@@ -25,6 +27,7 @@ const allProjects = [
     paper: null,
   },
   {
+    slug: "typescript-display",
     title: "Typescript display",
     description:
       "A comprehensive TypeScript learning project showcasing various practical works (TPs) and a final project. This repository serves as a portfolio of TypeScript skills, featuring interactive web applications and demonstrations.",
@@ -35,6 +38,7 @@ const allProjects = [
     paper: null,
   },
   {
+    slug: "spinning-ball-spiral",
     title: "spinning-ball-spiral",
     description:
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
@@ -43,7 +47,7 @@ const allProjects = [
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
-  }
+  },
 ];
 
 export default function ProjectsPage() {
@@ -59,9 +63,12 @@ export default function ProjectsPage() {
             <ArrowLeft size={16} />
             Back to home
           </Link>
-          <h1 className="text-4xl font-bold text-foreground mb-4">All Projects</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            All Projects
+          </h1>
           <p className="text-muted-foreground max-w-2xl">
-            A comprehensive collection of my work in AI, Computer Vision, and Applied Mathematics.
+            A comprehensive collection of my work in AI, Computer Vision, and
+            Applied Mathematics.
           </p>
         </div>
 
@@ -76,5 +83,5 @@ export default function ProjectsPage() {
         <Footer />
       </div>
     </main>
-  )
+  );
 }

@@ -1,8 +1,11 @@
+"use client";
+
 import { ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 interface AllProjectsCardProps {
+  slug: string;
   title: string;
   description: string;
   tags: string[];
@@ -14,6 +17,7 @@ interface AllProjectsCardProps {
 }
 
 export function AllProjectsCard({
+  slug,
   title,
   description,
   tags,
@@ -24,7 +28,10 @@ export function AllProjectsCard({
   ongoing,
 }: AllProjectsCardProps) {
   return (
-    <div className="group flex flex-col">
+    <Link
+      href={`/projects/${slug}`}
+      className="group flex flex-col cursor-pointer"
+    >
       {/* Image */}
       <div className="relative aspect-video rounded-xl overflow-hidden bg-muted mb-4">
         <Image
@@ -52,24 +59,32 @@ export function AllProjectsCard({
 
       {/* Title */}
       <div className="flex items-center gap-2 mb-2">
-        <h3 className="text-lg font-bold text-foreground">{title}</h3>
+        <h3 className="text-lg font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          {title}
+        </h3>
         {codeUrl && (
-          <Link
-            href={codeUrl}
-            target="_blank"
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(codeUrl, "_blank");
+            }}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <ExternalLink size={16} />
-          </Link>
+          </span>
         )}
         {paper && (
-          <Link
-            href={paper}
-            target="_blank"
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(paper, "_blank");
+            }}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <FileText size={16} />
-          </Link>
+          </span>
         )}
       </div>
 
@@ -81,6 +96,6 @@ export function AllProjectsCard({
 
       {/* Date */}
       <p className="text-sm text-muted-foreground">{date}</p>
-    </div>
+    </Link>
   );
 }
