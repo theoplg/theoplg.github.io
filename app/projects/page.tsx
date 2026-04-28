@@ -18,7 +18,7 @@ const allProjects = [
     date: "2026",
     image: "/WCB.png",
     codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
-    paper: "/reports/papier3.pdf",
+    paper: "/reports/WBC-report.pdf",
   },
   {
     slug: "copy-move-forgery-detection",
@@ -28,8 +28,8 @@ const allProjects = [
     tags: ["Computer Vision", "Python", "Image Processing"],
     date: "Sep 2025",
     image: "/copy-moove.png",
-    codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    paper: "/reports/papier1.pdf",
+    codeUrl: "https://github.com/theoplg/copy-move-forgery",
+    paper: "/reports/copy-move-report.pdf",
   },
   {
     slug: "llm-ssc",
@@ -62,7 +62,7 @@ const allProjects = [
     date: "2023 - 2024",
     image: "/coup-franc.PNG",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    paper: "/reports/papier2.pdf",
+    paper: "/reports/spinning-report.pdf",
   },
 ];
 

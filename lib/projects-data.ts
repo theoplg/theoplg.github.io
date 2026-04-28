@@ -36,7 +36,7 @@ export const allProjects: Project[] = [
     date: "2026",
     image: "/WCB.png",
     codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
-    paper: "/reports/paper3.pdf",
+    paper: "/reports/WBC-report.pdf",
     abstract:
       "Automatic classification of white blood cells from microscopic images is a major challenge for haematological diagnosis. This project addresses a 13-class classification problem from 28,901 training images with an extreme class imbalance (1183:1 ratio). We developed a classical ML pipeline based on 89 handcrafted features (morphological, colorimetric, textural) with dual cell/nucleus segmentation, then transitioned to deep learning with ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, backbone freezing, and Test Time Augmentation. The iterative approach, guided by t-SNE embedding analysis and confusion matrix diagnostics, achieved a progression from 0.491 to 0.77 macro F1 on the Kaggle leaderboard. Ranked 20th out of 70+ students at Télécom Paris.",
     type: "Academic Project",
@@ -76,8 +76,8 @@ export const allProjects: Project[] = [
     tags: ["Computer Vision", "Python", "Image Processing"],
     date: "Sep 2025",
     image: "/copy-moove.png",
-    codeUrl: "https://github.com/theoplg/copy-moove-forgery",
-    paper: "/reports/papier1.pdf",
+    codeUrl: "https://github.com/theoplg/copy-move-forgery",
+    paper: "/reports/copy-move-report.pdf",
     abstract:
       "Digital image manipulation has become increasingly common, with copy-move forgery being one of the most prevalent techniques where a region is copied and pasted elsewhere in the same image to hide or duplicate objects. This project implements an automatic detection system based on the PatchMatch algorithm, originally designed for structural image editing. By adapting this dense correspondence algorithm with spatial constraints and post-processing techniques, we created a robust pipeline capable of detecting copy-move forgeries while maintaining resilience against common image alterations such as blur, noise, and JPEG compression.",
     type: "Academic Project",
@@ -140,7 +140,7 @@ export const allProjects: Project[] = [
     date: "2023 - 2024",
     image: "/soccer-ball-trajectory-physics-simulation.jpg",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    paper: "/reports/papier2.pdf",
+    paper: "/reports/spinning-report.pdf",
     abstract:
       "This project presents a comprehensive physics simulation investigating the aerodynamics of spinning spherical projectiles, with particular focus on the Magnus effect. Inspired by Roberto Carlos's legendary free-kick goal in 1997, where the ball curved dramatically in flight, we develop a mathematical model that captures the complex interplay between drag forces, lift forces, and the Magnus effect. The simulation allows for exploration of how spin rate, initial velocity, and environmental conditions affect the trajectory of a spinning ball.",
     type: "Academic Project",

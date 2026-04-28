@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { ProjectCard } from "./project-card"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import { ProjectCard } from "./project-card";
+import { ArrowRight } from "lucide-react";
 
 const notableProjects = [
   {
@@ -16,7 +16,7 @@ const notableProjects = [
     description:
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Python", "Computer Vision", "PatchMatch", "Image Processing"],
-    codeUrl: "https://github.com/theoplg/copy-moove-forgery",
+    codeUrl: "https://github.com/theoplg/copy-move-forgery",
     paper: "/reports/papier1.pdf",
   },
   {
@@ -26,16 +26,20 @@ const notableProjects = [
     tags: ["Python", "BERTopic", "Streamlit", "NLP", "Clustering"],
     codeUrl: "https://github.com/theoplg/llm-ssc",
     paper: null,
-  }
+  },
 ];
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="py-24 px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">02.</h2>
+        <h2 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">
+          02.
+        </h2>
         <div className="flex items-center justify-between mb-12">
-          <h3 className="text-3xl font-bold text-foreground">Notable Projects</h3>
+          <h3 className="text-3xl font-bold text-foreground">
+            Notable Projects
+          </h3>
           <Link
             href="/projects"
             className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -60,5 +64,5 @@ export function ProjectsSection() {
         </Link>
       </div>
     </section>
-  )
+  );
 }
