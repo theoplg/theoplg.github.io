@@ -112,12 +112,12 @@ export const allProjects: Project[] = [
     description:
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
     tags: ["NLP", "Python", "BERTopic"],
-    date: "May 2025",
+    date: "Feb - Jun 2025",
     image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
     codeUrl: "https://github.com/theoplg/llm-ssc",
     abstract:
       "This project presents a web application designed for automatic topic extraction from large text corpora. The system leverages BERTopic, a state-of-the-art topic modeling technique that combines transformer-based embeddings with clustering algorithms. By utilizing SentenceTransformers for semantic text representation and unsupervised clustering techniques such as HDBSCAN, the application can identify coherent topics from diverse text sources including YouTube comments and rap lyrics. The pipeline includes preprocessing steps for text normalization, embedding generation, dimensionality reduction via UMAP, and final topic assignment with interpretable labels.",
-    type: "Personal Project",
+    type: "Academic Project",
     sections: [
       {
         title: "Technical Overview",
