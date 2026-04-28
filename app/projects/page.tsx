@@ -17,7 +17,7 @@ const allProjects = [
     ],
     date: "2026",
     image: "/WCB.png",
-    codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classificationn",
+    codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
     paper: "/reports/papier3.pdf",
   },
   {
@@ -60,7 +60,7 @@ const allProjects = [
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
     tags: ["Physics Simulation", "Python", "Matplotlib"],
     date: "2023 - 2024",
-    image: "/soccer-ball-trajectory-physics-simulation.jpg",
+    image: "/coup-franc.PNG",
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
   },
