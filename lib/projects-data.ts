@@ -22,27 +22,40 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
-    slug: "llm-ssc",
-    title: "LLM-SSC",
+    slug: "White-Blood-Cell-Classification",
+    title: "White Blood Cell Classification challenge",
     description:
-      "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
-    tags: ["NLP", "Python", "BERTopic"],
-    date: "May 2025",
-    image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
-    codeUrl: "https://github.com/theoplg/llm-ssc",
+      "White blood cell classification from microscopic images (13 classes, 28.9k images). Classical ML pipeline (89 handcrafted features + GradientBoosting + SMOTE) and deep learning (ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, TTA). IMA205 Challenge 2026.",
+    tags: ["Computer Vision", "Machine Learning", "Deep Learning", "Image Classification"],
+    date: "2026",
+    image: "/white-blood-cell-classification-challenge.jpg",
+    codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
+    paper: "/reports/papier3.pdf",
     abstract:
-      "This project presents a web application designed for automatic topic extraction from large text corpora. The system leverages BERTopic, a state-of-the-art topic modeling technique that combines transformer-based embeddings with clustering algorithms. By utilizing SentenceTransformers for semantic text representation and unsupervised clustering techniques such as HDBSCAN, the application can identify coherent topics from diverse text sources including YouTube comments and rap lyrics. The pipeline includes preprocessing steps for text normalization, embedding generation, dimensionality reduction via UMAP, and final topic assignment with interpretable labels.",
-    type: "Personal Project",
+      "Digital image manipulation has become increasingly common, with copy-move forgery being one of the most prevalent techniques where a region is copied and pasted elsewhere in the same image to hide or duplicate objects. This project implements an automatic detection system based on the PatchMatch algorithm, originally designed for structural image editing. By adapting this dense correspondence algorithm with spatial constraints and post-processing techniques, we created a robust pipeline capable of detecting copy-move forgeries while maintaining resilience against common image alterations such as blur, noise, and JPEG compression.",
+    type: "Academic Project",
+    publication: "Course Project - Computer Vision (IM01), November 2025",
     sections: [
       {
-        title: "Technical Overview",
+        title: "The PatchMatch Algorithm",
         content:
-          "The application is built with a Python backend using FastAPI for the REST API and Streamlit for the interactive web interface. BERTopic is used as the core topic modeling library, which internally uses SentenceTransformers (all-MiniLM-L6-v2) for generating document embeddings. UMAP reduces the high-dimensional embeddings to a lower-dimensional space, and HDBSCAN performs density-based clustering to identify topics. The system also generates word clouds and interactive visualizations for topic exploration.",
+          "PatchMatch efficiently computes a Nearest-Neighbor Field (NNF) by exploiting local image coherence. The algorithm operates through three key phases: (1) Random initialization assigns random correspondences between patches; (2) Propagation exploits spatial coherence by testing if neighboring offsets improve the current match, using both forward and backward passes; (3) Random search escapes local minima by testing candidates in exponentially decreasing concentric neighborhoods. For copy-move detection, we introduced a 'forbidden zone' constraint that prevents patches from matching to themselves, forcing the algorithm to find duplicated regions elsewhere in the image.",
+        image: "/copy-move/patchmatch-phases.png",
       },
       {
-        title: "Results and Applications",
+        title: "Detection Pipeline",
         content:
-          "The tool has been successfully applied to analyze sentiment and themes in YouTube comment sections, as well as to extract recurring motifs and subjects in French rap lyrics corpora. The extracted topics provide meaningful insights into public opinion and artistic themes, demonstrating the versatility of the approach across different domains and languages.",
+          "The raw displacement field from PatchMatch requires extensive post-processing to produce reliable binary detection masks. Our pipeline includes: (1) Median filtering on displacement components to remove isolated outliers while preserving boundaries; (2) Error map computation measuring local variance of displacement vectors—copied regions exhibit near-zero variance while natural homogeneous areas show high variance; (3) Global frequency filtering to keep only displacement vectors shared by many pixels (typically >1000); (4) RMSE verification between matched patches to eliminate false positives; (5) Morphological operations including size filtering and dilation to produce clean detection masks.",
+      },
+      {
+        title: "Results & Robustness",
+        content:
+          "The system successfully detects copy-move forgeries in various scenarios, performing particularly well on simple translations with textured objects. The algorithm demonstrates remarkable robustness: (1) Blur resistance—PatchMatch compares neighborhoods rather than individual pixels, so low-frequency structures remain detectable; (2) Noise tolerance—median filtering effectively handles impulse noise, and the method remains functional with Gaussian noise and JPEG compression artifacts; (3) Parameter sensitivity—the forbidden zone radius must be carefully tuned based on image characteristics (larger for homogeneous areas, smaller for detailed images). Key limitations include difficulty with uniform regions (sky, grass) that exhibit natural self-similarity, inability to handle rotation/scaling without invariant descriptors, and challenges with inpainting where copied patches originate from multiple dispersed locations.",
+        images: [
+          "/copy-move/results-comparison.png",
+          "/copy-move/robustness-examples.png",
+          "/copy-move/inpainting-examples.png",
+        ],
       },
     ],
   },
@@ -81,6 +94,31 @@ export const allProjects: Project[] = [
           "/copy-move/robustness-examples.png",
           "/copy-move/inpainting-examples.png",
         ],
+      },
+    ],
+  },
+  {
+    slug: "llm-ssc",
+    title: "LLM-SSC",
+    description:
+      "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
+    tags: ["NLP", "Python", "BERTopic"],
+    date: "May 2025",
+    image: "/nlp-topic-extraction-visualization-with-clusters.jpg",
+    codeUrl: "https://github.com/theoplg/llm-ssc",
+    abstract:
+      "This project presents a web application designed for automatic topic extraction from large text corpora. The system leverages BERTopic, a state-of-the-art topic modeling technique that combines transformer-based embeddings with clustering algorithms. By utilizing SentenceTransformers for semantic text representation and unsupervised clustering techniques such as HDBSCAN, the application can identify coherent topics from diverse text sources including YouTube comments and rap lyrics. The pipeline includes preprocessing steps for text normalization, embedding generation, dimensionality reduction via UMAP, and final topic assignment with interpretable labels.",
+    type: "Personal Project",
+    sections: [
+      {
+        title: "Technical Overview",
+        content:
+          "The application is built with a Python backend using FastAPI for the REST API and Streamlit for the interactive web interface. BERTopic is used as the core topic modeling library, which internally uses SentenceTransformers (all-MiniLM-L6-v2) for generating document embeddings. UMAP reduces the high-dimensional embeddings to a lower-dimensional space, and HDBSCAN performs density-based clustering to identify topics. The system also generates word clouds and interactive visualizations for topic exploration.",
+      },
+      {
+        title: "Results and Applications",
+        content:
+          "The tool has been successfully applied to analyze sentiment and themes in YouTube comment sections, as well as to extract recurring motifs and subjects in French rap lyrics corpora. The extracted topics provide meaningful insights into public opinion and artistic themes, demonstrating the versatility of the approach across different domains and languages.",
       },
     ],
   },
