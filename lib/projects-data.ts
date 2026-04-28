@@ -34,7 +34,7 @@ export const allProjects: Project[] = [
       "Medical Imaging",
     ],
     date: "2026",
-    image: "/white-blood-cell-classification-challenge.jpg",
+    image: "/WCB.jpg",
     codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
     paper: "/reports/paper3.pdf",
     abstract:
@@ -52,15 +52,13 @@ export const allProjects: Project[] = [
         title: "Deep Learning: From EfficientNet to ConvNeXt",
         content:
           "Transfer learning with EfficientNet-B3 pre-trained on ImageNet achieves 0.685 on the leaderboard, a +19 point jump over classical ML. However, t-SNE visualization of the embeddings reveals that rare classes (MMY, MY, PMY, PLY) form an indistinct central blob in feature space. This motivates the switch to ConvNeXt-Tiny with Focal Loss (gamma=2), which forces the network to focus on hard-to-classify examples. A CosineAnnealingWarmRestarts scheduler with T_0=15 over 60 epochs escapes local minima through periodic learning rate restarts, pushing the score to 0.747 with Test Time Augmentation (8 rounds, temperature scaling T=0.8).",
-        images: ["/WBC/embed_eff.png", 
-          "/WBC/conv_tsne.png",
-        ],
+        images: ["/WCB/embed_eff.png", "/WCB/conv_tsne.png"],
       },
       {
         title: "Optimization: Diagnosing and Fixing Overfitting",
         content:
           "A paradoxical observation drove the final optimization phase: adding MixUp improved validation F1 from 0.696 to 0.730, but the Kaggle score dropped from 0.747 to 0.728. This diagnosed overfitting on the validation split itself. Successive fixes included: backbone freezing for 5 epochs to prevent noisy gradient destruction of ImageNet features, CutMix alongside MixUp (50/50) for spatial regularization, weight decay increase from 5e-4 to 1e-2, and recalibration of class weights from log-dampened to 1/sqrt(n) with Focal Loss gamma reduced from 2.0 to 1.0. Each change was motivated by a specific diagnostic — not trial and error — yielding a final score of 0.77.",
-        image: "/WBC/confusion_DL1.png",
+        image: "/WCB/confusion_DL1.png",
       },
       {
         title: "Results & Analysis",
