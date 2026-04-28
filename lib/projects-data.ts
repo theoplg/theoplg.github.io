@@ -50,11 +50,9 @@ export const allProjects: Project[] = [
       {
         title: "Results & Robustness",
         content:
-          "The system successfully detects copy-move forgeries in various scenarios, performing particularly well on simple translations with textured objects. The algorithm demonstrates remarkable robustness: (1) Blur resistance—PatchMatch compares neighborhoods rather than individual pixels, so low-frequency structures remain detectable; (2) Noise tolerance—median filtering effectively handles impulse noise, and the method remains functional with Gaussian noise and JPEG compression artifacts; (3) Parameter sensitivity—the forbidden zone radius must be carefully tuned based on image characteristics (larger for homogeneous areas, smaller for detailed images). Key limitations include difficulty with uniform regions (sky, grass) that exhibit natural self-similarity, inability to handle rotation/scaling without invariant descriptors, and challenges with inpainting where copied patches originate from multiple dispersed locations.",
+          "",
         images: [
-          "/copy-move/results-comparison.png",
-          "/copy-move/robustness-examples.png",
-          "/copy-move/inpainting-examples.png",
+          
         ],
       },
     ],
@@ -66,7 +64,7 @@ export const allProjects: Project[] = [
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Computer Vision", "Python", "Image Processing"],
     date: "Sep 2025",
-    image: "/image-forgery-detection-algorithm-visualization.jpg",
+    image: "/copy-moove.png",
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
     paper: "/reports/papier1.pdf",
     abstract:

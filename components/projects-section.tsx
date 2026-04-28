@@ -4,12 +4,12 @@ import { ArrowRight } from "lucide-react"
 
 const notableProjects = [
   {
-    title: "LLM-SSC",
+    title: "White Blood Cell Classification challenge",
     description:
-      "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
-    tags: ["Python", "BERTopic", "Streamlit", "NLP", "Clustering"],
-    codeUrl: "https://github.com/theoplg/llm-ssc",
-    paper: null,
+      "White blood cell classification from microscopic images (13 classes, 28.9k images). Classical ML pipeline (89 handcrafted features + GradientBoosting + SMOTE) and deep learning (ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, TTA). IMA205 Challenge 2026.",
+    tags: ["Python", "Computer Vision", "Machine Learning", "Deep Learning"],
+    codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
+    paper: "/reports/papier3.pdf",
   },
   {
     title: "Copy-Move Forgery Detection",
@@ -20,6 +20,14 @@ const notableProjects = [
     paper: "/reports/papier1.pdf",
   },
   {
+    title: "LLM-SSC",
+    description:
+      "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",
+    tags: ["Python", "BERTopic", "Streamlit", "NLP", "Clustering"],
+    codeUrl: "https://github.com/theoplg/llm-ssc",
+    paper: null,
+  },
+  {
     title: "spinning-ball-spiral",
     description:
       "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
@@ -27,7 +35,7 @@ const notableProjects = [
     codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
     paper: "/reports/papier2.pdf",
   },
-]
+];
 
 export function ProjectsSection() {
   return (
