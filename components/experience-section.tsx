@@ -15,7 +15,7 @@ const timeline = [
   },
   {
     label: "EDUCATION",
-    title: "Preparatory Classes PCSI/PC",
+    title: "Preparatory Classes PCSI / PC*",
     place: "Lycée du Parc, Lyon",
     period: "2022 — 2024",
     description:
