@@ -34,7 +34,7 @@ export const allProjects: Project[] = [
       "Medical Imaging",
     ],
     date: "2026",
-    image: "/WCB.jpg",
+    image: "/WCB.png",
     codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
     paper: "/reports/paper3.pdf",
     abstract:
@@ -46,7 +46,7 @@ export const allProjects: Project[] = [
         title: "Classical ML: Handcrafted Features & Segmentation",
         content:
           "The first approach relies on a dual cell/nucleus segmentation using Otsu thresholding in CIELab colour space, followed by extraction of 89 handcrafted features spanning three categories: morphological (area, circularity, Hu moments, nucleus/cell ratio), colorimetric (RGB/HSV statistics per region: cell, nucleus, cytoplasm), and textural (GLCM properties over 4 angles + LBP histograms). Class imbalance is handled by SMOTE with k_neighbors=3 for ultra-rare classes and class_weight='balanced'. After GridSearchCV optimization, GradientBoosting achieves a macro F1 of 0.491. Confusion matrix analysis reveals that biologically similar classes (BNE/SNE, PLY/LY, MMY/MY/PMY) are systematically confused, highlighting the limits of handcrafted features for capturing fine morphological differences.",
-        image: "/WBC/double_segm.png",
+        image: "/WCB/double_segm.png",
       },
       {
         title: "Deep Learning: From EfficientNet to ConvNeXt",
