@@ -26,15 +26,7 @@ const notableProjects = [
     tags: ["Python", "BERTopic", "Streamlit", "NLP", "Clustering"],
     codeUrl: "https://github.com/theoplg/llm-ssc",
     paper: null,
-  },
-  {
-    title: "spinning-ball-spiral",
-    description:
-      "This project investigates the aerodynamics of spinning spherical projectiles, inspired by the legendary perfect free-kick scored by Roberto Carlos in 1997.",
-    tags: ["Python", "Matplotlib", "Physics Simulation"],
-    codeUrl: "https://github.com/theoplg/spinning-ball-spiral",
-    paper: "/reports/papier2.pdf",
-  },
+  }
 ];
 
 export function ProjectsSection() {
