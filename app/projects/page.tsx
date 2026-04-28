@@ -5,13 +5,29 @@ import { ArrowLeft } from "lucide-react";
 
 const allProjects = [
   {
+    slug: "White-Blood-Cell-Classification ",
+    title: "White Blood Cell Classification challenge",
+    description:
+      "White blood cell classification from microscopic images (13 classes, 28.9k images). Classical ML pipeline (89 handcrafted features + GradientBoosting) and deep learning (ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, TTA). IMA205 Challenge 2026.",
+    tags: [
+      "Computer Vision",
+      "Machine Learning",
+      "Deep Learning",
+      "Image Classification",
+    ],
+    date: "2026",
+    image: "/white-blood-cell-classification-challenge.jpg",
+    codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classificationn",
+    paper: "/reports/papier3.pdf",
+  },
+  {
     slug: "copy-move-forgery-detection",
     title: "Copy-Move Forgery Detection",
     description:
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Computer Vision", "Python", "Image Processing"],
     date: "Sep 2025",
-    image: "/image-forgery-detection-algorithm-visualization.jpg",
+    image: "/copy-moove",
     codeUrl: "https://github.com/theoplg/copy-moove-forgery",
     paper: "/reports/papier1.pdf",
   },
