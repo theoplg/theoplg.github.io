@@ -14,7 +14,7 @@ const notableProjects = [
   {
     title: "Copy-Move Forgery Detection",
     description:
-      "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
+      "Implementation of the PatchMatch algorithm adapted for automatic Copy-Move forgery detection in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Python", "Computer Vision", "PatchMatch", "Image Processing"],
     codeUrl: "https://github.com/theoplg/copy-move-forgery",
     paper: "/reports/copy-move-report.pdf",

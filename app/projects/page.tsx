@@ -24,7 +24,7 @@ const allProjects = [
     slug: "copy-move-forgery-detection",
     title: "Copy-Move Forgery Detection",
     description:
-      "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
+      "Implementation of the PatchMatch algorithm adapted for automatic Copy-Move forgery detection in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Computer Vision", "Python", "Image Processing"],
     date: "Sep 2025",
     image: "/copy-moove.png",
