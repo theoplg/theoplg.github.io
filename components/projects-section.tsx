@@ -9,7 +9,7 @@ const notableProjects = [
       "White blood cell classification from microscopic images (13 classes, 28.9k images). Classical ML pipeline (89 handcrafted features + GradientBoosting + SMOTE) and deep learning (ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, TTA). IMA205 Challenge 2026.",
     tags: ["Python", "Computer Vision", "Machine Learning", "Deep Learning"],
     codeUrl: "https://github.com/theoplg/White-Blood-Cell-Classification",
-    paper: "/reports/papier3.pdf",
+    paper: "/reports/WBC-report.pdf",
   },
   {
     title: "Copy-Move Forgery Detection",
@@ -17,7 +17,7 @@ const notableProjects = [
       "Implementation of the PatchMatch algorithm to detect Copy-Move forgeries in images. Robust pipeline including median filtering, error map and RMSE verification.",
     tags: ["Python", "Computer Vision", "PatchMatch", "Image Processing"],
     codeUrl: "https://github.com/theoplg/copy-move-forgery",
-    paper: "/reports/papier1.pdf",
+    paper: "/reports/copy-move-report.pdf",
   },
   {
     title: "LLM-SSC",
