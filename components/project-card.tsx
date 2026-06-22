@@ -23,7 +23,7 @@ export function ProjectCard({
   return (
     <Link
       href={`/projects/${slug}`}
-      className="group flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-muted-foreground/30 transition-all duration-300 cursor-pointer"
+      className="group flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-muted-foreground/30 hover:scale-[1.03] hover:shadow-lg transition-all duration-300 cursor-pointer"
     >
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag) => (
