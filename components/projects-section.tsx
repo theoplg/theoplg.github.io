@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const notableProjects = [
   {
+    slug: "White-Blood-Cell-Classification",
     title: "White Blood Cell Classification challenge",
     description:
       "White blood cell classification from microscopic images (13 classes, 28.9k images). Classical ML pipeline (89 handcrafted features + GradientBoosting + SMOTE) and deep learning (ConvNeXt-Tiny, Focal Loss, MixUp/CutMix, TTA). IMA205 Challenge 2026.",
@@ -12,6 +13,7 @@ const notableProjects = [
     paper: "/reports/WBC-report.pdf",
   },
   {
+    slug: "copy-move-forgery-detection",
     title: "Copy-Move Forgery Detection",
     description:
       "Implementation of the PatchMatch algorithm adapted for automatic Copy-Move forgery detection in images. Robust pipeline including median filtering, error map and RMSE verification.",
@@ -20,6 +22,7 @@ const notableProjects = [
     paper: "/reports/copy-move-report.pdf",
   },
   {
+    slug: "llm-ssc",
     title: "LLM-SSC",
     description:
       "Web application for automatic topic extraction from text corpora. Uses BERTopic, SentenceTransformers and unsupervised clustering techniques to analyze YouTube comments or rap lyrics.",

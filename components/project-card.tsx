@@ -1,7 +1,10 @@
+"use client";
+
 import { ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectCardProps {
+  slug: string;
   title: string;
   description: string;
   tags: string[];
@@ -10,6 +13,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
+  slug,
   title,
   description,
   tags,
@@ -17,7 +21,10 @@ export function ProjectCard({
   paper,
 }: ProjectCardProps) {
   return (
-    <div className="group p-6 rounded-2xl border border-border bg-card hover:border-muted-foreground/30 transition-all duration-300">
+    <Link
+      href={`/projects/${slug}`}
+      className="group flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-muted-foreground/30 transition-all duration-300 cursor-pointer"
+    >
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag) => (
           <span
@@ -37,28 +44,34 @@ export function ProjectCard({
         {description}
       </p>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mt-auto">
         {codeUrl && (
-          <Link
-            href={codeUrl}
-            target="_blank"
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(codeUrl, "_blank");
+            }}
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ExternalLink size={16} />
             Code
-          </Link>
+          </span>
         )}
         {paper && (
-          <Link
-            href={paper}
-            target="_blank"
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(paper, "_blank");
+            }}
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <FileText size={16} />
             Paper
-          </Link>
+          </span>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
