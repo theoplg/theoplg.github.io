@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText, Presentation } from "lucide-react";
 import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects-data";
 import { Footer } from "@/components/footer";
 
@@ -149,7 +149,7 @@ export default async function ProjectPage({
             ))}
 
             {/* Links */}
-            {(project.codeUrl || project.paper) && (
+            {(project.codeUrl || project.paper || project.slides) && (
               <div className="flex flex-wrap gap-4 pt-6 border-t border-border">
                 {project.codeUrl && (
                   <Link
@@ -169,6 +169,16 @@ export default async function ProjectPage({
                   >
                     <FileText size={16} />
                     Read Report
+                  </Link>
+                )}
+                {project.slides && (
+                  <Link
+                    href={project.slides}
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-muted transition-colors font-medium"
+                  >
+                    <Presentation size={16} />
+                    View Slides
                   </Link>
                 )}
               </div>

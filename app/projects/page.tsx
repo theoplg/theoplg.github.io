@@ -5,6 +5,17 @@ import { ArrowLeft } from "lucide-react";
 
 const allProjects = [
   {
+    slug: "medvae-x",
+    title: "MedVAE-X",
+    description:
+      "A study evaluating MedVAE, a generic medical image autoencoder, on out-of-distribution coronary angiography. Explores robustness, FiLM quality-conditioning, JEPA self-supervised adaptation, and latent-space segmentation.",
+    tags: ["Deep Learning", "Medical Imaging", "Computer Vision"],
+    date: "2026",
+    image: "/angrographie_coro.jpeg",
+    codeUrl: "https://github.com/theoplg/MedVAE-X",
+    paper: "/reports/medvae-x-report.pdf",
+  },
+  {
     slug: "White-Blood-Cell-Classification ",
     title: "White Blood Cell Classification challenge",
     description:

@@ -7,6 +7,7 @@ export interface Project {
   image: string;
   codeUrl?: string;
   paper?: string | null;
+  slides?: string | null;
   ongoing?: boolean;
   // Detailed content for project page
   abstract: string;
@@ -21,6 +22,59 @@ export interface Project {
 }
 
 export const allProjects: Project[] = [
+  {
+    slug: "medvae-x",
+    title: "MedVAE-X",
+    description:
+      "A study evaluating MedVAE, a generic medical image autoencoder, on out-of-distribution coronary angiography. Explores robustness, FiLM quality-conditioning, JEPA self-supervised adaptation, and latent-space segmentation.",
+    tags: [
+      "Deep Learning",
+      "Medical Imaging",
+      "Computer Vision",
+      "Self-Supervised Learning",
+      "PyTorch",
+    ],
+    date: "2026",
+    image: "/angrographie_coro.jpeg",
+    codeUrl: "https://github.com/theoplg/MedVAE-X",
+    paper: "/reports/medvae-x-report.pdf",
+    slides: "/reports/medvae-x-presentation.pdf",
+    abstract:
+      "MedVAE-X investigates how far a generic medical image compressor can be trusted, adapted, and reused on an out-of-distribution modality. MedVAE, a variational autoencoder trained on chest X-rays and mammographies, is evaluated on coronary angiography — a structurally distinct domain. The study is organized around four research axes: robustness to input corruptions, quality-aware reconstruction via FiLM conditioning, self-supervised latent adaptation with a Joint-Embedding Predictive Architecture (JEPA), and the use of latent representations for 26-class coronary vessel segmentation. We conclude that MedVAE produces a faithful, pixel-space–reusable code, but its latent is not yet semantically organized nor acquisition-aware enough to be segmented or conditioned directly.",
+    type: "Academic Project",
+    publication: "Course Project - Medical Image Analysis (IM06), Télécom Paris, 2026",
+    sections: [
+      {
+        title: "Axis A: Robustness to Input Corruption",
+        content:
+          "We measure how MedVAE's reconstruction quality degrades when inputs are corrupted by Gaussian blur, Poisson noise, and JPEG compression, using vessel-masked PSNR on the ARCADE coronary angiography dataset. Gaussian blur shows a strong anti-correlation with reconstruction fidelity, Poisson noise reveals partial denoising capabilities of the autoencoder, and JPEG compression produces a non-monotonic degradation pattern. These experiments establish how a compressor trained on a different modality behaves under realistic acquisition artifacts.",
+        image: "/medvae/assets/pipeline_robustness.jpg",
+      },
+      {
+        title: "Axis B: FiLM Quality Conditioning",
+        content:
+          "To make the model acquisition-aware, we inject per-image acquisition-quality scores through FiLM (Feature-wise Linear Modulation) layers, enabling quality-conditioned reconstruction. While the conditioning signal is genuinely exploited by the network, it slightly degrades overall reconstruction quality, suggesting that the bottleneck latent does not readily accommodate explicit quality information without trade-offs.",
+        image: "/medvae/assets/pipeline_film.png",
+      },
+      {
+        title: "Axis C: JEPA Self-Supervised Adaptation",
+        content:
+          "We replace BioMedCLIP supervision with self-supervised Joint-Embedding Predictive Architecture (JEPA) learning on MedMNIST data, following I-JEPA design patterns. The adapted latents become more compact and discriminative under linear probing, but this comes at a reconstruction trade-off, illustrating the tension between semantically organized representations and pixel-faithful compression.",
+        image: "/medvae/assets/pipeline_jepa.png",
+      },
+      {
+        title: "Axis D: Latent-Space Segmentation",
+        content:
+          "Finally, we test whether MedVAE's latent code can drive 26-class coronary vessel segmentation across four conditions with varying architectural constraints, using segmentation_models.pytorch. Direct dense prediction from the single-channel latent remains unsuitable, confirming that the compressed representation, while pixel-space reusable, is not yet semantically structured enough for downstream dense tasks.",
+        images: [
+          "/medvae/assets/cond_A.png",
+          "/medvae/assets/cond_B.png",
+          "/medvae/assets/cond_C.png",
+          "/medvae/assets/cond_D.png",
+        ],
+      },
+    ],
+  },
   {
     slug: "White-Blood-Cell-Classification",
     title: "White Blood Cell Classification Challenge",

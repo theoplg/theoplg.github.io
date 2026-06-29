@@ -4,6 +4,15 @@ import { ArrowRight } from "lucide-react";
 
 const notableProjects = [
   {
+    slug: "medvae-x",
+    title: "MedVAE-X",
+    description:
+      "Evaluating MedVAE, a generic medical image autoencoder, on out-of-distribution coronary angiography: robustness to corruptions, FiLM quality-conditioning, JEPA self-supervised adaptation, and latent-space vessel segmentation. IM06 project, Télécom Paris.",
+    tags: ["Python", "Deep Learning", "Medical Imaging", "PyTorch"],
+    codeUrl: "https://github.com/theoplg/MedVAE-X",
+    paper: "/reports/medvae-x-report.pdf",
+  },
+  {
     slug: "White-Blood-Cell-Classification",
     title: "White Blood Cell Classification challenge",
     description:
@@ -52,7 +61,7 @@ export function ProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {notableProjects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
