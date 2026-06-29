@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink, FileText, Presentation } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -10,6 +10,7 @@ interface ProjectCardProps {
   tags: string[];
   codeUrl?: string;
   paper?: string | null;
+  slides?: string | null;
 }
 
 export function ProjectCard({
@@ -19,6 +20,7 @@ export function ProjectCard({
   tags,
   codeUrl,
   paper,
+  slides,
 }: ProjectCardProps) {
   return (
     <Link
@@ -69,6 +71,19 @@ export function ProjectCard({
           >
             <FileText size={16} />
             Paper
+          </span>
+        )}
+        {slides && (
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(slides, "_blank");
+            }}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Presentation size={16} />
+            Slides
           </span>
         )}
       </div>

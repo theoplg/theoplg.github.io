@@ -11,6 +11,7 @@ const notableProjects = [
     tags: ["Python", "Deep Learning", "Medical Imaging", "PyTorch"],
     codeUrl: "https://github.com/theoplg/MedVAE-X",
     paper: "/reports/medvae-x-report.pdf",
+    slides: "/reports/medvae-x-presentation.pdf",
   },
   {
     slug: "White-Blood-Cell-Classification",
